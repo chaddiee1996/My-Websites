@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(0, 0%, 23%);
+  --muted: hsl(220, 13%, 97%);
+  --muted-foreground: hsl(220, 9%, 46%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(0, 0%, 23%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(0, 0%, 23%);
+  --border: hsl(220, 13%, 91%);
+  --input: hsl(220, 13%, 91%);
+  --primary: hsl(25, 89%, 53%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(220, 13%, 97%);
+  --secondary-foreground: hsl(220, 9%, 15%);
+  --accent: hsl(220, 13%, 97%);
+  --accent-foreground: hsl(220, 9%, 15%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(25, 89%, 53%);
+  --radius: 0.5rem;
+  
+  /* Boost Electrical Brand Colors */
+  --boost-orange: hsl(25, 89%, 53%);
+  --boost-orange-light: hsl(25, 100%, 63%);
+  --boost-dark: hsl(0, 0%, 23%);
+  --boost-gray: hsl(220, 13%, 97%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 4%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 4%, 16%);
+  --muted-foreground: hsl(240, 5%, 65%);
+  --popover: hsl(240, 10%, 4%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 4%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 4%, 16%);
+  --input: hsl(240, 4%, 16%);
+  --primary: hsl(25, 89%, 53%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(240, 4%, 16%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 4%, 16%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 63%, 31%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(25, 89%, 53%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .font-body {
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  .font-tech {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .text-boost-orange {
+    color: hsl(25, 89%, 53%);
+  }
+  
+  .text-boost-orange-light {
+    color: hsl(25, 100%, 63%);
+  }
+  
+  .text-boost-dark {
+    color: hsl(0, 0%, 23%);
+  }
+  
+  .bg-boost-orange {
+    background-color: hsl(25, 89%, 53%);
+  }
+  
+  .bg-boost-orange-light {
+    background-color: hsl(25, 100%, 63%);
+  }
+  
+  .bg-boost-dark {
+    background-color: hsl(0, 0%, 23%);
+  }
+  
+  .bg-boost-gray {
+    background-color: hsl(220, 13%, 97%);
+  }
+  
+  .border-boost-orange {
+    border-color: hsl(25, 89%, 53%);
+  }
+  
+  .hover\:bg-boost-orange-light:hover {
+    background-color: hsl(25, 100%, 63%);
+  }
+  
+  .hover\:text-boost-orange:hover {
+    color: hsl(25, 89%, 53%);
+  }
+  
+  .service-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(241, 147, 32, 0.2);
+  }
+  
+  .glow-effect {
+    box-shadow: 0 0 20px rgba(241, 147, 32, 0.3);
+  }
+  
+  .parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .gradient-overlay {
+    background: linear-gradient(135deg, rgba(241, 147, 32, 0.1), rgba(58, 58, 60, 0.8));
+  }
+  
+  @media (max-width: 768px) {
+    .parallax {
+      background-attachment: scroll;
+    }
+  }
+}
